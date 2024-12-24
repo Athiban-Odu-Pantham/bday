@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nisat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5a3c7, #fbe7e8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #d63384;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .emoji {
+            font-size: 3rem;
+            animation: float 2s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background: #d63384;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background: #b32d6c;
+        }
+
+        .gift-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d63384;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            display: none;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #ffcc00;
+            border-radius: 50%;
+            animation: explode 2s ease-out infinite;
+            z-index: 999;
+        }
+
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🎉🥰🎂</div>
+        <h1 class="title">Happy Birthday, Nisat! 🎈</h1>
+        <p class="subtitle">To the sweetest friend I've ever met 💖</p>
+        <p class="message">
+            Nisat, I can't believe how quickly we connected. From the moment we met in Clash of Clans, I knew you were special. 🌟 You brought joy and comfort into my life, stood by me during tough times, and made me feel valued. Your kindness, sweetness, and care are beyond compare.❤️
+            <br><br>
+            You are not just my best friend; you are family. I feel so lucky to have you in my life, and I hope this little gesture makes your birthday extra special. 🎁✨
+        </p>
+        <a class="button" href="#" onclick="showGift()">Small Gift 🎁</a>
+    </div>
+    <div class="gift-message" id="gift-message">🎉 I promise I will always stay by your side,my dudeyy ❤️🥰💖</div>
+
+    <script>
+        function showGift() {
+            const message = document.getElementById('gift-message');
+            message.style.display = 'block';
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 10000);
+
+            for (let i = 0; i < 100; i++) {
+                createFirework();
+            }
+        }
+
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.classList.add('firework');
+            firework.style.top = Math.random() * window.innerHeight + 'px';
+            firework.style.left = Math.random() * window.innerWidth + 'px';
+            document.body.appendChild(firework);
+
+            setTimeout(() => {
+                firework.remove();
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
